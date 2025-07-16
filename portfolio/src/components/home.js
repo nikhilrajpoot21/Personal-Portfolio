@@ -5,7 +5,7 @@ import SkillPhoto from '../images/skills graphic -Photoroom.png';
 
 export default function home() {
   return (
-<section className="relative z-10 pt-32 pb-20 md:pt-32 md:pb-35 overflow-hidden min-h-screen flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[10rem] bg-transparent">
+<section className="relative z-10 pt-32 pb-20 md:m-0 md:p-0 md:min-h-screen flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[10rem] bg-transparent">
 
        <div className="bg-transparent md:bg-transparent text-white h-[20rem] w-3/4 md:w-[32rem] md:h-[30rem]    flex items-center justify-center ">
        <img className="h-fill w-fill rounded" src={SkillPhoto} alt="Nikhil's Avatar"/>

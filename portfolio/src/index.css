@@ -8,7 +8,7 @@
     background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 20%;  /*pehle ye 100% 50% tha*/
+    background-position: 100% 20%;  /*also use 100% 50% */
   }
 }
 
@@ -33,7 +33,7 @@ body {
     background-position: 0% 50%;
   }
   50% {
-    background-position: 100% 20%;  /*pehle ye 100% 50% tha*/
+    background-position: 100% 20%;  /*also use 100% 50% */
   }
 }
 .animate-gradient {
@@ -64,3 +64,7 @@ body {
   object-fit: cover;
   z-index: 1;
 }
+html {
+  scroll-behavior: smooth; /*for scroll effect while using navigation bar*/
+}
+

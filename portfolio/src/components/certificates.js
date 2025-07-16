@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Certificates() {
   return (
-   <section className="h-screen w-full bg-transparent">
+   <section className="h-screen w-full bg-transparent" id='certificates'>
 
     {/* Header */}
     <div className="bg-red">
