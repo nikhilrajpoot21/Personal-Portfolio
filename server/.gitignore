@@ -1,0 +1,33 @@
+# Node.js dependencies
+node_modules/
+
+# Environment config
+.env
+*.env
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build and debug
+dist/
+build/
+*.tsbuildinfo
+
+# Express-specific
+*.db
+*.sqlite
+
+# IDE/editor configs
+.vscode/
+.idea/
+
+# Temp & misc
+*.bak
+*.tmp
+.cache/
