@@ -1,17 +1,45 @@
+import { useState } from 'react';
 import React from 'react'
-import FormImg from '../images/formimg.png'; // Assuming you have an image for the contact form
-import Linkedin from '../images/linkedinicon.png'; // Assuming you have an image for the contact form
-import Gmail from '../images/gmailicon.png'; // Assuming you have an image for the contact form
-import Telegram from '../images/telegramicon.png'; // Assuming you have an image for the contact form
-import Whatsapp from '../images/whatsappicon.png'; // Assuming you have an image for the contact form
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import FormImg from '../images/formimg.png'; 
+import Linkedin from '../images/linkedinicon.png'; 
+import Gmail from '../images/gmailicon.png'; 
+import Telegram from '../images/telegramicon.png';
+import Whatsapp from '../images/whatsappicon.png'; 
 
-export default function contact() {
+export default function Contact() {
+ const [form, setform] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const handleChange = (e) => {
+    setform({ ...form, [e.target.name]: e.target.value });
+  }
+const handleSubmit= async(e)=>{
+  e.preventDefault();
+  const response = await fetch('http://localhost:8080/api/contact',{
+    method:'POST',
+      headers: {
+    'Content-Type': 'application/json'
+  },
+    body: JSON.stringify(form),
+  });
+  const result = await response.json();
+    if (response.ok) {
+    toast.success(result.message);
+    } else {
+  toast.warning(result.message);
+    }
+
+  }
   return (
    <section className='h-screen w-full bg-transparent' id='contact'>
       <div className='w-full h-[2.7rem] bg-transparent'> {/* container for header tag */}
             <h1 className='h-[5rem] font-bold text-center mt-10 text-[2.5rem] bg-transparent bg-gradient-to-r from-indigo-200 via-purple-500 to-pink-300 bg-clip-text text-transparent animate-gradient'>Contact Me</h1>
       </div>
-      <div className='flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[3rem] bg-transparent pt-20'>   {/* Outer most container */}
+      <div className='flex flex-col md:flex-row items-center justify-center gap-6 md:gap-[3rem] bg-transparent pt-20 md:h-[37rem]' >   {/* Outer most container */}
             
         <div className='bg-transparent md:bg-transparent text-white  h-[15rem] w-3/4 md:w-[40rem] md:h-[22rem] flex flex-row'>    {/* container for image and social links */}
                 <div className='bg-transparent h-[10rem] w-[10rem] md:h-[20rem] md:w-[15rem] '> {/* container for image */}
@@ -76,17 +104,20 @@ export default function contact() {
                         </div>
                     </div>
                 </div>
-        </div>
-            
-<form className='h-[20rem] w-[20rem] md:w-[30rem] md:h-[22rem] bg-transparent p-4'> {/* container for contact form */}
+        </div> 
+
+  <ToastContainer/>
+                 
+<form className='h-[20rem] w-[20rem] md:w-[30rem] md:h-[22rem] bg-transparent p-4' onSubmit={handleSubmit}> {/* container for contact form */}
   {/* Name Field */}
   <div className="mb-3">
     <p className='text-[1rem] font-bold font-mono bg-gradient-to-r from-indigo-200 via-purple-500 to-pink-300 bg-clip-text text-transparent animate-gradient'>Name</p>
     <input
       type="text"
-      id="name"
+      name='name'
       placeholder="Enter your name"
       className="w-full p-2 border border-gray-300 rounded-md text-sm text-white bg-transparent font-mono"
+      onChange={handleChange}
     />
   </div>
 
@@ -95,9 +126,10 @@ export default function contact() {
     <p className='text-[1rem] font-bold font-mono bg-gradient-to-r from-indigo-200 via-purple-500 to-pink-300 bg-clip-text text-transparent animate-gradient'>E-Mail</p>
     <input
       type="email"
-      id="email"
+      name='email'
       placeholder="Enter your email"
       className="w-full p-2 border border-gray-300 rounded-md text-sm text-white bg-transparent font-mono"
+      onChange={handleChange}
     />
   </div>
 
@@ -105,10 +137,11 @@ export default function contact() {
   <div className="mb-3">
     <p className='text-[1rem] font-bold font-mono bg-gradient-to-r from-indigo-200 via-purple-500 to-pink-300 bg-clip-text text-transparent animate-gradient'>Message</p>
     <textarea
-      id="message"
+      name='message'
       placeholder="Write your message"
       rows="3"
       className="w-full p-2 border border-gray-300 rounded-lg text-sm text-white bg-transparent  font-mono"
+      onChange={handleChange}
     />
   </div>
 
