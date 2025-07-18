@@ -12,9 +12,9 @@ Frontend scaffolding is ready. Backend integration and cloud deployment planned.
 ---
 
 ## ⚙️ Technologies Used  
-- **Frontend**: React, Tailwind CSS  
-- **Backend (Coming Soon)**: Express.js, Node.js  
-- **Tools**: Git, VS Code
+- **Frontend**: React, Tailwind CSS, react-toastify  
+- **Backend**: Express.js, Node.js  
+- **Tools**: Git, VS Code 
 
 ---
 
@@ -25,3 +25,7 @@ Frontend scaffolding is ready. Backend integration and cloud deployment planned.
 ```bash
 git clone https://github.com/nikhilrajpoot21/Personal-Portfolio.git
 cd Personal-Portfolio
+cd portfolio
+npm install
+cd server
+npm install
