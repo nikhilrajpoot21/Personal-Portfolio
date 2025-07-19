@@ -28,11 +28,15 @@ const handleSubmit= async(e)=>{
   });
   const result = await response.json();
     if (response.ok) {
-    toast.success(result.message);
+    toast.success(result.message,{autoClose:1500});  
+    setform({
+      name:'',
+      email:'',
+      message:''
+    })
     } else {
-  toast.warning(result.message);
+  toast.warning(result.message,{ autoClose:2000});
     }
-
   }
   return (
    <section className='h-screen w-full bg-transparent' id='contact'>
@@ -116,6 +120,7 @@ const handleSubmit= async(e)=>{
       type="text"
       name='name'
       placeholder="Enter your name"
+      value={form.name}
       className="w-full p-2 border border-gray-300 rounded-md text-sm text-white bg-transparent font-mono"
       onChange={handleChange}
     />
@@ -128,6 +133,7 @@ const handleSubmit= async(e)=>{
       type="email"
       name='email'
       placeholder="Enter your email"
+      value={form.email}
       className="w-full p-2 border border-gray-300 rounded-md text-sm text-white bg-transparent font-mono"
       onChange={handleChange}
     />
@@ -140,6 +146,7 @@ const handleSubmit= async(e)=>{
       name='message'
       placeholder="Write your message"
       rows="3"
+      value={form.message}
       className="w-full p-2 border border-gray-300 rounded-lg text-sm text-white bg-transparent  font-mono"
       onChange={handleChange}
     />

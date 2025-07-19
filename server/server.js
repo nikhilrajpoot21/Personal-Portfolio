@@ -1,7 +1,7 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 const app = express();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 app.use(cors({
     origin : 'http://localhost:3000'
@@ -13,14 +13,14 @@ app.post('/api/contact',(req,res)=>{
   console.log('Form submitted:', { name, email, message });
 
 if(!name || !email || !message){
-    res.status(300).json({sucess:false , message: 'Oops!! Please fill in all required fields.'})
+    res.status(300).json({sucess:false , message: 'Oops!! Please fill in all required fields.'});
 }else{
   // You can add validation or save to database here
-  res.status(400).json({ success: true, message: 'Form received!' });
+  res.status(200).json({ success: true, message: 'Form received!' });
 }
 });
 
 const Server_PORT = 8080;
 app.listen(Server_PORT,()=>{
     console.log(`Server is running on http://localhost:${Server_PORT}`);
-})
+});
