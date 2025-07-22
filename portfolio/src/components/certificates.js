@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import Certify1 from '../images/certificate1.jpg';
-import Certify2 from '../images/certificate1.jpg';
-import Certify3 from '../images/certificate2.jpg';
-import Certify4 from '../images/certificate1.jpg';
-import Certify5 from '../images/certificate1.jpg';
-import Certify6 from '../images/certificate1.jpg';
-import Certify7 from '../images/certificate1.jpg';
-import Certify8 from '../images/certificate1.jpg';
-import Certify9 from '../images/certificate1.jpg';
+import Certify2 from '../images/certificate2.jpg';
 
-const certificates = [Certify1,Certify2,Certify3,Certify4,Certify5,Certify6,Certify7,Certify8,Certify9];
+const certificates = [Certify1,Certify2];
 
 
 export default function Certificates() {

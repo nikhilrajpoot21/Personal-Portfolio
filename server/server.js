@@ -15,8 +15,8 @@ app.post('/api/contact',(req,res)=>{
 if(!name || !email || !message){
     res.status(300).json({sucess:false , message: 'Oops!! Please fill in all required fields.'});
 }else{
-  // You can add validation or save to database here
-  res.status(200).json({ success: true, message: 'Form received!' });
+
+  res.status(200).json({ success: true, message: 'All details received!' });
 }
 });
 

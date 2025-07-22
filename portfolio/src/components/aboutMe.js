@@ -1,5 +1,5 @@
 import React from 'react'
-import MysecondPhoto from '../images/MyPersonalPhoto.png'; // Importing the second photo
+import MysecondPhoto from '../images/MyPersonalPhoto.png'; 
 
 export default function aboutMe() {
   return (
@@ -14,7 +14,7 @@ export default function aboutMe() {
         <div className=" h-[25rem] w-[25rem] md:w-[30rem] md:h-[22rem]  bg-transpatent rounded-[5rem]  shadow-lg shadow-indigo-600/100 flex flex-col items-center justify-center"> {/*container for description*/}
         <p className='ml-[1.2rem] text-[1rem] text-white font-mono p-4'>
             I’m Nikhil Singh Rajpoot, a Computer Science Engineering student (B.Tech, 2023–2027) from India. I'm a dedicated full-stack developer with strong problem-solving skills and 100+ LeetCode problems solved. I aim to become a Industry-leading software engineer, with future plans to specialize in Cloud Computing and Artificial Intelligence—constantly striving to innovate and unlock human potential through technology.</p>
-            <button className='bg-purple-500 text-white font-mono p-2 rounded-lg hover:bg-purple-600 transition duration-300'>Download Resume</button>
+            <a className='bg-purple-500 text-white font-mono p-2 rounded-lg hover:bg-purple-600 transition duration-300' href='./resume.pdf'download="Nikhil-Resume.pdf">Download Resume</a>
         </div>
     </div>
       </section>
