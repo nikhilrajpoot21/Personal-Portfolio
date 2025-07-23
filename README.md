@@ -7,7 +7,7 @@ This is my personal portfolio built with **React** and **Tailwind CSS**, designe
 
 ## 🚧 Project Status  
 🛠️ **In Progress**  
-Frontend scaffolding is ready. Backend integration and cloud deployment planned.
+Frontend scaffolding is ready. Backend integration is ready and cloud deployment planned.
 
 ---
 
@@ -15,6 +15,7 @@ Frontend scaffolding is ready. Backend integration and cloud deployment planned.
 - **Frontend**: React, Tailwind CSS, react-toastify  
 - **Backend**: Express.js, Node.js  
 - **Tools**: Git, VS Code 
+- **DataBase**: MongoDb
 
 ---
 
@@ -25,6 +26,7 @@ Frontend scaffolding is ready. Backend integration and cloud deployment planned.
 ```bash
 git clone https://github.com/nikhilrajpoot21/Personal-Portfolio.git
 cd Personal-Portfolio
+npm install
 cd portfolio
 npm install
 cd server
